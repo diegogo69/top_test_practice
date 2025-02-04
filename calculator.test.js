@@ -22,6 +22,11 @@ test('Calculator multiply 2 values correctly', () => {
   expect(calculator.multiply(2, 3)).toBe(6);
 });
 
+test('Calculator divide 2 values correctly', () => {
+  expect(calculator.divide(2, 2)).toBeCloseTo(1);
+  expect(calculator.divide(2, 3)).toBeCloseTo(0.66, 1);
+});
+
 test('Calculator methods expect valid numeric values', () => {
   expect(() => {
     calculator.add('cat', 'dog')
