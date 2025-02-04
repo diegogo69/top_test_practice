@@ -15,3 +15,7 @@ test('Return null for non String arguments', () => {
   expect(reverseString([])).toBeNull();
   expect(reverseString({})).toBeNull();
 });
+
+test('Return empty string for empty string argumentjs', () => {
+  expect(reverseString('')).toBe('');
+})
