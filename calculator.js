@@ -9,9 +9,16 @@ const calculator = {
 
     return a + b;
   },
-  subtract() {},
+  subtract(a, b) {
+    if (!isNumeric(a) || !isNumeric(b)) throw "Invalid non numeric arguments";
+
+    return a - b;
+  },
+
   divide() {},
-  multiply() {},
+  multiply(a, b) {
+    return a * b;
+  },
 };
 
 export default calculator;
