@@ -30,4 +30,8 @@ test('Calculator methods expect valid numeric values', () => {
   expect(() => {
     calculator.subtract('cat', 'dog')
   }).toThrow('Invalid non numeric arguments');
+
+  expect(() => {
+    calculator.multiply('cat', 'dog')
+  }).toThrow('Invalid non numeric arguments');
 });

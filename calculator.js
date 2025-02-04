@@ -17,6 +17,8 @@ const calculator = {
 
   divide() {},
   multiply(a, b) {
+    if (!isNumeric(a) || !isNumeric(b)) throw "Invalid non numeric arguments";
+
     return a * b;
   },
 };
