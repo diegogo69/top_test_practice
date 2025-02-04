@@ -27,6 +27,12 @@ test('Calculator divide 2 values correctly', () => {
   expect(calculator.divide(2, 3)).toBeCloseTo(0.66, 1);
 });
 
+test('Calculator handles division by zero', () => {
+  expect(() => {
+    calculator.divide(2, 0)
+  }).toThrow('Invalid division by 0');
+});
+
 test('Calculator methods expect valid numeric values', () => {
   expect(() => {
     calculator.add('cat', 'dog')
@@ -37,10 +43,10 @@ test('Calculator methods expect valid numeric values', () => {
   }).toThrow('Invalid non numeric arguments');
 
   expect(() => {
-    calculator.multiply('cat', 'dog')
+    calculator.divide('cat', 'dog')
   }).toThrow('Invalid non numeric arguments');
 
   expect(() => {
-    calculator.divide('cat', 'dog')
+    calculator.multiply('cat', 'dog')
   }).toThrow('Invalid non numeric arguments');
 });
