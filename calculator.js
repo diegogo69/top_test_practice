@@ -16,8 +16,11 @@ const calculator = {
   },
 
   divide(a, b) {
-    return +(a / b).toFixed(2);
+    if (!isNumeric(a) || !isNumeric(b)) throw "Invalid non numeric arguments";
+
+    return Number((a / b).toFixed(2));
   },
+  
   multiply(a, b) {
     if (!isNumeric(a) || !isNumeric(b)) throw "Invalid non numeric arguments";
 
