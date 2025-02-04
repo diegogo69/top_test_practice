@@ -5,6 +5,8 @@ const isNumber = (val) => typeof val === 'number';
 
 const calculator = {
   add(a, b) {
+    if (!isNumeric(a) || !isNumeric(b)) throw "Invalid non numeric arguments";
+
     return a + b;
   },
   subtract() {},
