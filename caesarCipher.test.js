@@ -15,9 +15,32 @@ test('Shift of 3 for a given UPPER case letter of the english alphabet', () => {
 test('Shift of 3 for a given lower case word', () => {
   expect(caesarCipher('hello', 3)).toBe('khoor');
   expect(caesarCipher('world', 3)).toBe('zruog');
+  expect(caesarCipher('xyz', 3)).toBe('abc');
 });
 
 test('Shift of 3 for a given UPPER case word', () => {
   expect(caesarCipher('HELLO', 3)).toBe('KHOOR');
   expect(caesarCipher('WORLD', 3)).toBe('ZRUOG');
 });
+
+test('Shift of 3 for a given phrase', () => {
+  expect(caesarCipher('marcus brutus', 3)).toBe('pdufxv euxwxv');
+});
+
+test('Non alphabetical character remain unchanged', () => {
+  expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+});
+
+test('Reject non-string argument to be shifted', () => {
+  expect(() => {
+    caesarCipher(123, 3)
+  }).toThrow('Invalid argument (a string is expected)');
+
+  expect(() => {
+    caesarCipher([], 3)
+  }).toThrow('Invalid argument (a string is expected)');
+
+  expect(() => {
+    caesarCipher(null, 3)
+  }).toThrow('Invalid argument (a string is expected)');
+})
