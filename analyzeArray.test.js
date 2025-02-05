@@ -28,4 +28,26 @@ test('Reject non-array arguments', () => {
 
 test('Handle empty arrays', () => {
   expect(analyzeArray([])).toEqual([]);
+});
+
+test('Handle non numeric arrays', () => {
+  expect(() => {
+    analyzeArray(['1'])
+  }).toThrow('Invalid array. Expected an array of numbers only');
+
+  expect(() => {
+    analyzeArray([1, 2, '3'])
+  }).toThrow('Invalid array. Expected an array of numbers only');
+
+  expect(() => {
+    analyzeArray([[1], [2], [3]])
+  }).toThrow('Invalid array. Expected an array of numbers only');
+
+  expect(() => {
+    analyzeArray([null, 2, 3])
+  }).toThrow('Invalid array. Expected an array of numbers only');
+
+  expect(() => {
+    analyzeArray([1, false, 3])
+  }).toThrow('Invalid array. Expected an array of numbers only');
 })
