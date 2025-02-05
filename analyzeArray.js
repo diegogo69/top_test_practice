@@ -19,6 +19,10 @@ const getMinMax = function(arr) {
 }
 
 const analyzeArray = function(arr) {
+  if (!Array.isArray(arr)) throw 'Invalid argument given. An array is expected';
+
+  if (!arr[0]) return [];
+
   const { min, max } = getMinMax(arr);
 
   return {

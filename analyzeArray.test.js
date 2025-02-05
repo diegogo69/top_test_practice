@@ -15,3 +15,17 @@ test('Return correct property values', () => {
   expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('min', 1);
   expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('max', 8);
 });
+
+test('Reject non-array arguments', () => {
+  expect(() => {
+    analyzeArray(123)
+  }).toThrow('Invalid argument given. An array is expected');
+
+  expect(() => {
+    analyzeArray('123')
+  }).toThrow('Invalid argument given. An array is expected');
+})
+
+test('Handle empty arrays', () => {
+  expect(analyzeArray([])).toEqual([]);
+})
