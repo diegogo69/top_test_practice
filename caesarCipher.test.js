@@ -23,6 +23,10 @@ test('Shift of 3 for a given UPPER case word', () => {
   expect(caesarCipher('WORLD', 3)).toBe('ZRUOG');
 });
 
+test('Shift of 3 for a given miXEd case word', () => {
+  expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+});
+
 test('Shift of 3 for a given phrase', () => {
   expect(caesarCipher('marcus brutus', 3)).toBe('pdufxv euxwxv');
 });
